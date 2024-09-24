@@ -4,7 +4,7 @@ on:
     branches: ['develop', 'release-*']
 jobs:
   devops:
-    name: Test - Unit & Integration
+    name: Test - Unit & Integration & SonarCloud Scan
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
