@@ -39,7 +39,14 @@ public class SearchTest {
 
     assertNotNull(actualDecimalFraction);
     assertEquals(expectedDecimalFraction, actualDecimalFraction);
+  }
 
+  @Test
+  void testFindFirstDecimalFractionByUserName() {
+    Search search = new Search();
+    Double actualDecimal = search.findFirstDecimalFractionByUserName("Oscar");
+    assertNotNull(actualDecimal);
+    assertEquals(0, actualDecimal);
   }
 
 }
