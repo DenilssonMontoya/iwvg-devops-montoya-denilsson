@@ -32,4 +32,15 @@ public class Search {
         .map(Fraction::decimal);
   }
 
+  public Double findFirstDecimalFractionByUserName(String name) {
+    return new UsersDatabase()
+        .findAll()
+        .filter(user -> name.equals(user.getName()))
+        .flatMap(user -> user.getFractions().stream())
+        .filter(fraction -> fraction.getDenominator() != 0)
+        .findFirst()
+        .map(Fraction::decimal)
+        .orElse(null);
+  }
+
 }
