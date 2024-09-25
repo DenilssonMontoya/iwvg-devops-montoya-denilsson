@@ -72,13 +72,12 @@ public class Fraction {
         this.denominator * evaluatedfraction.getNumerator();
   }
 
-  public void add(Fraction addendFraction) {
+  public Fraction add(Fraction addendFraction) {
     int newDenominator = this.denominator * addendFraction.getDenominator();
     int newNumerator = (this.numerator * addendFraction.getDenominator()) +
         (this.denominator * addendFraction.getNumerator());
 
-    this.denominator = newDenominator;
-    this.numerator = newNumerator;
+    return new Fraction(newNumerator, newDenominator);
   }
 
   public Fraction multiply(Fraction multiplierFraction) {
