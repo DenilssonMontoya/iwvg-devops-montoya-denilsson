@@ -1,5 +1,6 @@
 package es.upm.miw.iwvg_devops.code;
 
+import java.util.Collection;
 import java.util.Comparator;
 import java.util.stream.Stream;
 
@@ -27,7 +28,8 @@ public class Search {
     return new UsersDatabase()
         .findAll()
         .filter(user -> name.equals(user.getName()))
-        .flatMap(user -> user.getFractions().stream())
+        .map(User::getFractions)
+        .flatMap(Collection::stream)
         .filter(fraction -> fraction.getDenominator() != 0)
         .map(Fraction::decimal);
   }
