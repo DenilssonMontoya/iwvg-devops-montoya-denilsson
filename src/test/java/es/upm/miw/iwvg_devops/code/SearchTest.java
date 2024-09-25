@@ -3,6 +3,8 @@ package es.upm.miw.iwvg_devops.code;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 
+import java.util.List;
+
 import org.junit.jupiter.api.Test;
 
 public class SearchTest {
@@ -27,4 +29,17 @@ public class SearchTest {
     assertEquals(2, actualHighestFraction.getNumerator());
     assertEquals(1, actualHighestFraction.getDenominator());
   }
+
+  @Test
+  void testFindDecimalFractionByUserName() {
+    Search search = new Search();
+    List<Double> expectedDecimalFraction = List.of(1d, 1d, 1d);
+    List<Double> actualDecimalFraction =
+        search.findDecimalFractionByUserName("Paula").toList();
+
+    assertNotNull(actualDecimalFraction);
+    assertEquals(expectedDecimalFraction, actualDecimalFraction);
+
+  }
+
 }
