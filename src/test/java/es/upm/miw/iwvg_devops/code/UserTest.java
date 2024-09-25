@@ -31,7 +31,7 @@ public class UserTest {
 
   @Test
   void testAllArgsConstructor(){
-    List<Fraction> fractions = List.of(new Fraction());
+    List<Fraction> fractions = List.of(new Fraction(2,1));
     user = new User(DEFAULT_ID, DEFAULT_NAME, DEFAULT_FAMILY_NAME, fractions);
 
     assertNotNull(user);
@@ -43,7 +43,7 @@ public class UserTest {
 
   @Test
   void testAddFraction(){
-    Fraction fraction = new Fraction();
+    Fraction fraction = new Fraction(2,1);
     user = new User();
     user.addFraction(fraction);
 
