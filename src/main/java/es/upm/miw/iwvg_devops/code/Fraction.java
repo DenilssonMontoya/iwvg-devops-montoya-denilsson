@@ -25,78 +25,81 @@ package es.upm.miw.iwvg_devops.code;
  * medios. Invertir fraccion
  */
 public class Fraction {
-    private int numerator;
-    private int denominator;
 
-    public Fraction(int numerator, int denominator) {
-        this.numerator = numerator;
-        this.denominator = denominator;
-    }
+  private int numerator;
 
-    public Fraction() {
-        this(1, 1);
-    }
+  private int denominator;
 
-    public int getNumerator() {
-        return numerator;
-    }
+  public Fraction(int numerator, int denominator) {
+    this.numerator = numerator;
+    this.denominator = denominator;
+  }
 
-    public void setNumerator(int numerator) {
-        this.numerator = numerator;
-    }
+  public Fraction() {
+    this(1, 1);
+  }
 
-    public int getDenominator() {
-        return denominator;
-    }
+  public int getNumerator() {
+    return numerator;
+  }
 
-    public void setDenominator(int denominator) {
-        this.denominator = denominator;
-    }
+  public void setNumerator(int numerator) {
+    this.numerator = numerator;
+  }
 
-    public double decimal() {
-        return (double) numerator / denominator;
-    }
+  public int getDenominator() {
+    return denominator;
+  }
 
-    public boolean isProper(){
-        return this.denominator > this.numerator;
-    }
+  public void setDenominator(int denominator) {
+    this.denominator = denominator;
+  }
 
-    public boolean isImproper(){
-        return this.numerator >= this.denominator;
-    }
+  public double decimal() {
+    return (double) numerator / denominator;
+  }
 
-    public boolean isEquivalent(Fraction evaluatedfraction){
-        return this.numerator * evaluatedfraction.getDenominator() ==
-            this.denominator * evaluatedfraction.getNumerator();
-    }
+  public boolean isProper() {
+    return this.denominator > this.numerator;
+  }
 
-    public void add(Fraction addendFraction){
-        int newDenominator = this.denominator * addendFraction.getDenominator();
-        int newNumerator = (this.numerator * addendFraction.getDenominator()) +
-            (this.denominator * addendFraction.getNumerator());
+  public boolean isImproper() {
+    return this.numerator >= this.denominator;
+  }
 
-        this.denominator = newDenominator;
-        this.numerator = newNumerator;
-    }
+  public boolean isEquivalent(Fraction evaluatedfraction) {
+    return this.numerator * evaluatedfraction.getDenominator() ==
+        this.denominator * evaluatedfraction.getNumerator();
+  }
 
-    public void multiply(Fraction multiplierFraction){
-        this.denominator = this.denominator * multiplierFraction.getDenominator();
-        this.numerator = this.numerator * multiplierFraction.getNumerator();
-    }
+  public void add(Fraction addendFraction) {
+    int newDenominator = this.denominator * addendFraction.getDenominator();
+    int newNumerator = (this.numerator * addendFraction.getDenominator()) +
+        (this.denominator * addendFraction.getNumerator());
 
-    public void divide(Fraction divisorFraction){
-        int newDenominator = this.denominator * divisorFraction.getNumerator();
-        int newNumerator = this.numerator * divisorFraction.getDenominator();
+    this.denominator = newDenominator;
+    this.numerator = newNumerator;
+  }
 
-        this.denominator = newDenominator;
-        this.numerator = newNumerator;
-    }
+  public Fraction multiply(Fraction multiplierFraction) {
+    this.denominator = this.denominator * multiplierFraction.getDenominator();
+    this.numerator = this.numerator * multiplierFraction.getNumerator();
+    return new Fraction(this.numerator, this.denominator);
+  }
 
-    @Override
-    public String toString() {
-        return "Fraction{" +
-                "numerator=" + numerator +
-                ", denominator=" + denominator +
-                '}';
-    }
+  public void divide(Fraction divisorFraction) {
+    int newDenominator = this.denominator * divisorFraction.getNumerator();
+    int newNumerator = this.numerator * divisorFraction.getDenominator();
+
+    this.denominator = newDenominator;
+    this.numerator = newNumerator;
+  }
+
+  @Override
+  public String toString() {
+    return "Fraction{" +
+        "numerator=" + numerator +
+        ", denominator=" + denominator +
+        '}';
+  }
 }
