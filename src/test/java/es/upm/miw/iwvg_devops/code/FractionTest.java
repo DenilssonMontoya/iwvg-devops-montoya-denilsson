@@ -56,9 +56,9 @@ public class FractionTest {
   void testAdd() {
     Fraction fractionBase = new Fraction(3, 2);
     Fraction fractionAddend = new Fraction(6, 4);
-    fractionBase.add(fractionAddend);
-    assertEquals(24, fractionBase.getNumerator());
-    assertEquals(8, fractionBase.getDenominator());
+    Fraction actualAddedFraction = fractionBase.add(fractionAddend);
+    assertEquals(24, actualAddedFraction.getNumerator());
+    assertEquals(8, actualAddedFraction.getDenominator());
   }
 
   @Test

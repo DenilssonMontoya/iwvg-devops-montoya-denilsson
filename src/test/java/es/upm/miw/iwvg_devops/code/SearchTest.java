@@ -17,4 +17,14 @@ public class SearchTest {
     assertEquals(0, actualFractionMultiplied.getNumerator());
     assertEquals(0, actualFractionMultiplied.getDenominator());
   }
+
+  @Test
+  void testFindHighestFraction() {
+    Search search = new Search();
+    Fraction actualHighestFraction = search.findHighestFraction();
+
+    assertNotNull(actualHighestFraction);
+    assertEquals(2, actualHighestFraction.getNumerator());
+    assertEquals(1, actualHighestFraction.getDenominator());
+  }
 }
