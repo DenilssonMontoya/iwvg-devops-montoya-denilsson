@@ -86,12 +86,11 @@ public class Fraction {
     return new Fraction(this.numerator, this.denominator);
   }
 
-  public void divide(Fraction divisorFraction) {
+  public Fraction divide(Fraction divisorFraction) {
     int newDenominator = this.denominator * divisorFraction.getNumerator();
     int newNumerator = this.numerator * divisorFraction.getDenominator();
 
-    this.denominator = newDenominator;
-    this.numerator = newNumerator;
+    return new Fraction(newNumerator, newDenominator);
   }
 
   @Override

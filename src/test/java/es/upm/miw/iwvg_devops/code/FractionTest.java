@@ -74,9 +74,9 @@ public class FractionTest {
   void testDivide() {
     Fraction fractionBase = new Fraction(3, 2);
     Fraction fractionMultiplier = new Fraction(6, 4);
-    fractionBase.divide(fractionMultiplier);
-    assertEquals(12, fractionBase.getNumerator());
-    assertEquals(12, fractionBase.getDenominator());
+    Fraction actualFractionResult = fractionBase.divide(fractionMultiplier);
+    assertEquals(12, actualFractionResult.getNumerator());
+    assertEquals(12, actualFractionResult.getDenominator());
   }
 
 }
